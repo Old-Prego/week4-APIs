@@ -7,13 +7,19 @@ var words = message.split(' ');
 
 function countdown() {
   var timeLeft = 5;
-
+  var timerE1 = document.getElementById('countdown');
+  timerE1.textContent = timeLeft + " seconds until the words are displayed";
   // TODO: Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
   var timeInterval = setInterval(function () {
-    //
-    // YOUR CODE HERE
-    //
-  });
+    timeLeft--;
+    timerE1.textContent = timeLeft + " seconds until the words are displayed";
+
+    if(timeLeft===0){
+      clearInterval(timeInterval);
+      timerE1.textContent = "";
+      displayMessage();
+    }
+  },1000);
 }
 
 // Displays the message one word at a time
