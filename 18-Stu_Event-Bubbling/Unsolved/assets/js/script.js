@@ -27,21 +27,26 @@ function navigate(direction) {
 }
 
 // TODO: Describe the functionality of the following event listener.
+// Sends the user to the origin link of where the image is stored
 carousel.addEventListener("click", function() {
   window.location.href = images[index];
 });
 
 // TODO: Describe the functionality of the following event listener.
+// Passes 1 to the navigate function, which changes the photo based off of index in an array.
 next.addEventListener("click", function(event) {
   // TODO: What is the purpose of the following line of code?
+  // Makes it so that when you click on the buttons you don't also get the function where it opens the image in another page.
   event.stopPropagation();
 
   navigate(1);
 });
 
 // TODO: Describe the functionality of the following event listener.
+// Same as previous
 prev.addEventListener("click", function(event) {
     // TODO: What would happen if we didn't add the following line of code?
+    // When you click on the previous button you would also trigger the carousel click event.
   event.stopPropagation();
 
   navigate(-1);
