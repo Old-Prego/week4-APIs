@@ -9,6 +9,19 @@ signUpButton.addEventListener("click", function(event) {
   
   // TODO: Create user object from submissio
 
+  var contact = {
+    firstName: firstNameInput.value,
+    lastName: lastNameInput.value,
+    email: emailInput.value,
+    pass: passwordInput.value
+  };
+
   // TODO: Set new submission to local storage 
   
+  localStorage.setItem("contact",JSON.stringify(contact));
+
+  var lastSubmission = JSON.parse(localStorage.getItem("contact"));
+
+  console.log(lastSubmission);
+
 });
